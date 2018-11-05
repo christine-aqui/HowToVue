@@ -5,6 +5,7 @@
     v-for="video in videos"
     :video="video"
     :key="video.etag"
+    @videoSelect="onVideoSelect"
     ></VideoListItem>
   </ul>
 </template>
@@ -22,8 +23,13 @@ export default {
     videos: Array
     // this videos is the property being passed down by the parent "App.vue"
     //  is al also checking that that videos passed is an array.
+  },
+  methods: {
+    onVideoSelect(video){
+      // console.log('videoSelect emitted from video list');
+      this.$emit('videoSelect', video);
+    }
   }
-  // ['videos'],
 };
 </script>
 
