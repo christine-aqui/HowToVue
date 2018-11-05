@@ -4,7 +4,7 @@
 //  v-bind will re-render any time videos on the parent is updated. this will update the child
 //  note v-bind is the same as :
 <template>
-  <div>
+  <div class="container">
     <SearchBar @termChange="onTermChange"></SearchBar>
     <VideoList :videos="videos"></VideoList>
   </div>
