@@ -11,6 +11,7 @@
     methods: {
       onInput: function(event) {
         // console.log(event.target.value);
+        // emit is used to communicate fromt he child component to the parent.
         this.$emit('termChange', event.target.value);
       }
     }
