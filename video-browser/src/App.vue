@@ -1,6 +1,6 @@
 <template>
   <div>
-    <SearchBar> </SearchBar>
+    <SearchBar @termChange="onTermChange"> </SearchBar>
   </div>
 </template>
 
@@ -12,5 +12,10 @@ import SearchBar from './components/SearchBar';
     components: {
       SearchBar
     },
+    methods: {
+      onTermChange: function (searchTerm) {
+        console.log(searchTerm)
+      }
+    }
   };
 </script>
