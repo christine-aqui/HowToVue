@@ -3,6 +3,7 @@
 // mutation: updates the state
 // actions: gets the token that comes back from the oauth ... this calls the mutation to update the state| logout action ... this calls the mutation to set the state | login action
 
+import  api from '../../api/imgur';
 
 const state = {
   token: null,
@@ -16,9 +17,12 @@ const getters = {
 
 // commit is used to call a mutations that has been defined.
 const actions = {
+  login: () => {
+    api.login();
+  },
   logout: ({ commit }) => {
     commit('setToken', null); // here we call the setToken and pass the null value to it.
-  }
+  },
 };
 
 const mutations = {
