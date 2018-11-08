@@ -14,10 +14,15 @@ const getters = {
   isLoggedIn: (state) => !!state.token
 };
 
+// commit is used to call a mutations that has been defined.
 const actions = {
-
+  logout: ({ commit }) => {
+    commit('setToken', null); // here we call the setToken and pass the null value to it.
+  }
 };
 
 const mutations = {
-
+  setToken: (state, token) => {
+    state.token = token;
+  }
 };
